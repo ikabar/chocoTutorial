@@ -8,7 +8,7 @@ import org.chocosolver.solver.variables.VariableFactory;
 /**
  * Created by ikabar on 10/04/2016.
  */
-public class EmptyRiddle {
+public class Riddle2371Solution {
 
     static {
 
@@ -46,7 +46,7 @@ public class EmptyRiddle {
 
 
     public static void main(String[] args){
-                printRiddle();
+        printRiddle();
 
         solver.post(ICF.scalar(new IntVar[]{Xa, Xb, Xc}, new int[] {100, 10, 1}, Xabc));
         solver.post(ICF.scalar(new IntVar[]{Xd, Xe, Xf}, new int[] {100, 10, 1}, Xdef));
@@ -81,6 +81,7 @@ public class EmptyRiddle {
         solver.post(ICF.times(Xa, Xdef, Xxlmn));
 
         solver.post(ICF.times(Xabc, Xdef, Xopqrst));
+        solver.findSolution();
 
         printSolution();
     }
